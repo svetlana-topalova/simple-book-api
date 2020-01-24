@@ -29,3 +29,4 @@ Client Setup
 npm install
 ~~~
 
+Setup MAIL credentials in .env
