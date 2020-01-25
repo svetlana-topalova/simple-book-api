@@ -1963,10 +1963,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchData: function fetchData() {
       var _this = this;
 
-      console.log(this.currentPage);
       _services_book_service__WEBPACK_IMPORTED_MODULE_0__["default"].getBooks(this.currentPage).then(function (response) {
-        console.log(response); //this.page = _page;
-
         _this.items = response.data.data;
         _this.totalItems = response.data.meta.total;
         _this.pageCount = response.data.meta.last_page;
@@ -2026,8 +2023,6 @@ __webpack_require__.r(__webpack_exports__);
       };
       this.$store.dispatch('auth/login', data).then(function () {
         _this.$store.dispatch('auth/user').then(function () {
-          console.log("redirect");
-
           _this.$router.push('/');
         }, function (error) {
           _this.loading = false;
@@ -2202,14 +2197,11 @@ __webpack_require__.r(__webpack_exports__);
         is_author: this.is_author,
         is_subscribed: !this.is_author ? this.subscribe : 0
       };
-      console.log(userData);
       this.$store.dispatch('auth/register', userData).then(function (data) {
-        console.log(data);
         _this.message = data;
 
         _this.$router.push('/login');
       }, function (error) {
-        console.log(error);
         _this.loading = false;
         _this.message = error.message;
         _this.errors = error;
@@ -2266,15 +2258,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     user: function user() {
       return this.$store.state.auth.user;
     },
     author: function author() {
-      console.log('is_author');
-      console.log(this.$store.state.auth.user);
-      console.log(this.$store.state.auth.user.is_author);
       return this.$store.state.auth.user.is_author;
     },
     authenticated: function authenticated() {
@@ -57623,7 +57614,6 @@ function () {
     value: function login(data) {
       return axios.post('/api/login', data).then(this.handleResponse).then(function (response) {
         if (response.data.access_token) {
-          console.log(response.data.access_token);
           localStorage.setItem('token', response.data.access_token);
           axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.access_token;
         }
@@ -57635,16 +57625,12 @@ function () {
     key: "logout",
     value: function logout() {
       var token = localStorage.getItem('token');
-      console.log('token');
-      console.log(token);
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
       return new Promise(function (resolve, reject) {
         axios.post('/api/logout').then(function (response) {
-          //console.log(response)
           localStorage.removeItem('token');
           localStorage.removeItem('user');
         })["catch"](function (error) {
-          //console.log(error)
           localStorage.removeItem('token');
           localStorage.removeItem('user');
         });
@@ -57657,7 +57643,6 @@ function () {
 
       return axios.get('/api/user').then(this.handleResponse).then(function (_ref) {
         var data = _ref.data;
-        console.log(data);
         localStorage.setItem('user', JSON.stringify(data));
         return data;
       })["catch"](function (error) {

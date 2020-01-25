@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use GuzzleHttp;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller {
 
@@ -33,30 +34,15 @@ class AuthController extends Controller {
     }
 
     public function login(Request $request) {
-        $http = new GuzzleHttp\Client();
-        try {
-
-            $response = $http->post(config('services.passport.login_endpoint'), [
-                'form_params' => [
-                    'grant_type' => 'password',
-                    'client_id' => config('services.passport.client_id'),
-                    'client_secret' => config('services.passport.client_secret'),
-                    'username' => $request->username,
-                    'password' => $request->password,
-                ]
-            ]);
-
-            return $response->getBody();
-        } catch (GuzzleHttp\Exception\BadResponseException $e) {
-
-            if ($e->getCode() === 400) {
-                return response()->json('Invalid Request. Please enter a username or a password.', $e->getCode());
-            } else if ($e->getCode() === 401 || $e->getCode() === 404) {
-                return response()->json('Your credentials are incorrect. Please try again', $e->getCode());
-            }
-
-            return response()->json('Something went wrong on the server.', $e->getCode());
-        }
+        
+        if(Auth::attempt(['email' => $request->username, 'password' => $request->password])){ 
+            $user = auth()->user(); 
+            $success['access_token'] =  $user->createToken($user->email.'-'.now())-> accessToken; 
+            return response()->json($success, 200); 
+        } 
+        else{ 
+            return response()->json('Your credentials are incorrect. Please try again', 401); 
+        } 
     }
 
     public function logout() {

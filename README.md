@@ -17,8 +17,6 @@ Passport Auth
 ~~~
 php artisan passport:install
 ~~~
-Enter generated Passport credentials in .env for Client ID: 2 
-
 
 ~~~
 php artisan storage:link

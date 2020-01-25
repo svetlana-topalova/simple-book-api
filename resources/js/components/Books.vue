@@ -60,12 +60,8 @@ export default {
     methods: {
 
         fetchData() {
-            console.log(this.currentPage)
-
             BookService.getBooks(this.currentPage).then(
                 response => {
-                    console.log(response)
-                    //this.page = _page;
                     this.items = response.data.data;
                     this.totalItems = response.data.meta.total;
                     this.pageCount = response.data.meta.last_page;

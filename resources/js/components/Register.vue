@@ -80,17 +80,14 @@ export default {
                 is_author: this.is_author,
                 is_subscribed: !this.is_author ? this.subscribe : 0,
             };
-            console.log(userData)
 
 
             this.$store.dispatch('auth/register', userData).then(
                 data => {
-                    console.log(data)
                     this.message = data;
                     this.$router.push('/login');
                 },
                 error => {
-                    console.log(error)
                     this.loading = false;
                     this.message = error.message;
                     this.errors = error;

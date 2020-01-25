@@ -39,7 +39,6 @@ export default {
                 () => {
                     this.$store.dispatch('auth/user').then(
                         () => {
-                            console.log("redirect")
                             this.$router.push('/');
                         },
                         error => {

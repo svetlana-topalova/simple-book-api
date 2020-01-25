@@ -14,7 +14,9 @@
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto">
                 <b-navbar-nav v-if="authenticated && user">
-                    <b-nav-item><b-nav-text>{{ user.name }}</b-nav-text></b-nav-item>
+                    <b-nav-item>
+                        <b-nav-text>{{ user.name }}</b-nav-text>
+                    </b-nav-item>
                     <b-nav-item class="nav-link button is-primary" @click="logOut">Logout</b-nav-item>
                 </b-navbar-nav>
                 <b-navbar-nav v-else>
@@ -42,9 +44,6 @@ export default {
             return this.$store.state.auth.user;
         },
         author() {
-          console.log('is_author')
-          console.log(this.$store.state.auth.user)
-          console.log(this.$store.state.auth.user.is_author)
             return this.$store.state.auth.user.is_author;
         },
         authenticated() {

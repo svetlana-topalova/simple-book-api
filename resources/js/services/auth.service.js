@@ -5,7 +5,6 @@ class AuthService {
             .then(this.handleResponse)
             .then(response => {
                 if (response.data.access_token) {
-                    console.log(response.data.access_token)
                     localStorage.setItem('token', response.data.access_token);
                     axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.access_token;
                 }
@@ -15,20 +14,16 @@ class AuthService {
 
     logout() {
         let token = localStorage.getItem('token');
-        console.log('token');
-        console.log(token);
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
 
         return new Promise((resolve, reject) => {
             axios.post('/api/logout')
                 .then(response => {
-                    //console.log(response)
                     localStorage.removeItem('token')
                     localStorage.removeItem('user')
 
                 })
                 .catch(error => {
-                    //console.log(error)
                     localStorage.removeItem('token')
                     localStorage.removeItem('user')
 
@@ -44,7 +39,6 @@ class AuthService {
             .then(({
                 data
             }) => {
-                console.log(data)
                 localStorage.setItem('user', JSON.stringify(data));
                 return data
             })
