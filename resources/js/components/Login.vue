@@ -43,14 +43,14 @@ export default {
                         },
                         error => {
                             this.loading = false;
-                            this.message = error;
+                            this.message = error.message;
                         }
 
                     );
                 },
                 error => {
                     this.loading = false;
-                    this.message = error;
+                    this.message = error.message;
                 }
             );
         }

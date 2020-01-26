@@ -20,7 +20,7 @@ class Book extends JsonResource
             'title' => $this->title,
             'description' => $this->description,
             'cover' => $this->cover ? Storage::url($this->cover) : '',
-            'published_at' => $this->created_at,
+            'published_at' => $this->created_at ? $this->created_at->format('d/m/Y H:i') : "",
             'author' => User::make($this->author)
         ];
     }

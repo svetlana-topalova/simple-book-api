@@ -39,8 +39,8 @@ class AuthService {
             .then(({
                 data
             }) => {
-                localStorage.setItem('user', JSON.stringify(data));
-                return data
+                localStorage.setItem('user', JSON.stringify(data.data));
+                return data.data
             })
             .catch(error => {
                 this.error = error.response.data;

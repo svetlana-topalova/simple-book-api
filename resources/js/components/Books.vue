@@ -21,8 +21,7 @@ export default {
     data() {
         return {
             items: [],
-            fields: [
-                {
+            fields: [{
                     key: 'cover',
                     label: 'Cover'
                 },
@@ -37,6 +36,10 @@ export default {
                 {
                     key: 'description',
                     label: 'Description'
+                },
+                {
+                    key: 'published_at',
+                    label: 'Published'
                 }
             ],
             currentPage: 1,

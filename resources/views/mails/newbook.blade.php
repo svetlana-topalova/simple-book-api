@@ -16,6 +16,8 @@
             {{$book->description}}
         </p>
 
+        @if($image !== '')
         <img width="300px" src="{{ $message->embed($image) }}" />
+        @endif
     </body>
 </html>

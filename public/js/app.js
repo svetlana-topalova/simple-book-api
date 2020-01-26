@@ -1941,6 +1941,9 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         key: 'description',
         label: 'Description'
+      }, {
+        key: 'published_at',
+        label: 'Published'
       }],
       currentPage: 1,
       perPage: 15,
@@ -2026,11 +2029,11 @@ __webpack_require__.r(__webpack_exports__);
           _this.$router.push('/');
         }, function (error) {
           _this.loading = false;
-          _this.message = error;
+          _this.message = error.message;
         });
       }, function (error) {
         _this.loading = false;
-        _this.message = error;
+        _this.message = error.message;
       });
     }
   }
@@ -57643,8 +57646,8 @@ function () {
 
       return axios.get('/api/user').then(this.handleResponse).then(function (_ref) {
         var data = _ref.data;
-        localStorage.setItem('user', JSON.stringify(data));
-        return data;
+        localStorage.setItem('user', JSON.stringify(data.data));
+        return data.data;
       })["catch"](function (error) {
         _this.error = error.response.data;
 

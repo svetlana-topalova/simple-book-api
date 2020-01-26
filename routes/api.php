@@ -10,6 +10,4 @@ Route::middleware('auth:api')->post('/logout', 'AuthController@logout');
 Route::apiResource('books', 'BookController');
 Route::middleware(['auth:api','isAuthor'])->post('/book/publish', 'BookController@publish');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:api')->get('/user','AuthController@user');

@@ -1,0 +1,877 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://books.loc/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>Books management</h1>
+<p>APIs for managing books</p>
+<!-- START_c84ecb8d4fd02d9a637dac124b62c629 -->
+<h2>Get books</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://books.loc/api/books" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://books.loc/api/books"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "id": 17,
+            "title": "Quia repellendus.",
+            "description": "Sunt totam nisi quo vel. Explicabo vitae id officiis dolor quia quia. Quo rerum laudantium illum totam rerum.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 41,
+                "name": "Newton Bartoletti",
+                "email": "kareem14@example.org",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 16,
+            "title": "Est reiciendis doloremque.",
+            "description": "Voluptate veritatis ut doloremque rerum dolores accusantium. Sit dignissimos qui sapiente tempora rerum in. Eum impedit dolorem doloribus est.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 40,
+                "name": "Dr. Enrico Bergnaum II",
+                "email": "thomas.turcotte@example.net",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 15,
+            "title": "Ullam quidem temporibus.",
+            "description": "Iste nobis fugit distinctio nostrum. Ipsum enim nobis ducimus quo quos. Quaerat quidem consequatur reprehenderit.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 37,
+                "name": "Uriel Schmitt",
+                "email": "hilbert.west@example.net",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 14,
+            "title": "Ipsum quae sed.",
+            "description": "Suscipit facere eum maxime nihil delectus. Aliquid id inventore est et quia. Necessitatibus dolorem aut commodi est.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 35,
+                "name": "Alexane Ruecker III",
+                "email": "reilly.alia@example.org",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 13,
+            "title": "Illo corrupti sint repellat.",
+            "description": "Ab harum vero quis aspernatur et. Sint quisquam esse est adipisci et nobis. Natus illo ut qui voluptas ut. Odit eaque aut debitis quis dolore id non qui.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 33,
+                "name": "Josianne Hirthe",
+                "email": "lindgren.orland@example.net",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 12,
+            "title": "Molestiae qui.",
+            "description": "Vel aut porro corporis. Et et vitae debitis nulla. Qui assumenda culpa deleniti odit dolore est earum.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 31,
+                "name": "Ms. Flossie McGlynn",
+                "email": "bergnaum.lewis@example.net",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 11,
+            "title": "Odit aut qui.",
+            "description": "Ex reiciendis qui ut. Nihil non ipsam quos neque fuga. Reiciendis accusantium nulla qui enim dolor voluptatibus.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 28,
+                "name": "Dr. Benedict King MD",
+                "email": "rkemmer@example.com",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 10,
+            "title": "Qui consequatur ut.",
+            "description": "Asperiores cupiditate rem iure molestiae et. Aliquid dolorum est sed rerum aut optio. Sit enim maiores rerum facilis. Odit sed dolor porro quibusdam dolor quisquam.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 26,
+                "name": "Kayli Leannon",
+                "email": "bayer.rupert@example.net",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 9,
+            "title": "Aut at quisquam.",
+            "description": "Et aut vitae sequi. Et aut optio aliquam consequuntur doloremque perferendis. Accusantium enim voluptas at aut corrupti.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 25,
+                "name": "Dr. Bettye Adams",
+                "email": "bartell.bud@example.com",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 8,
+            "title": "Neque qui.",
+            "description": "Ut nulla occaecati nulla autem dolores qui facilis. Voluptatem est aut velit sed est voluptatem maxime.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 18,
+                "name": "Bridget Schimmel",
+                "email": "judy05@example.net",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 7,
+            "title": "Aperiam magni laboriosam.",
+            "description": "Aliquam et veniam quis autem placeat. Sunt aperiam assumenda doloribus at tenetur non vitae. Est et omnis ducimus suscipit consequatur fugit excepturi minima.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 16,
+                "name": "Molly Powlowski",
+                "email": "isac78@example.org",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 6,
+            "title": "Aliquid voluptatem totam et.",
+            "description": "At deleniti maiores laboriosam. Quia non laboriosam fuga velit quibusdam error. Officia excepturi aut voluptatum temporibus neque.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 13,
+                "name": "Prof. Immanuel Gottlieb",
+                "email": "adele43@example.net",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 5,
+            "title": "Alias inventore voluptatibus.",
+            "description": "Similique distinctio quasi a reiciendis facere beatae officia. Consequatur magnam sequi et explicabo quidem. Sit nobis a nihil earum fuga. Animi doloribus dignissimos impedit atque.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 11,
+                "name": "Omer Reinger",
+                "email": "ohermann@example.net",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 4,
+            "title": "Tempore necessitatibus illo aut.",
+            "description": "Aliquid consequatur architecto fugit dolorem modi id eius. Consequatur voluptatem ut hic totam. Ipsa officia occaecati quod aut sint sunt.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 9,
+                "name": "Dr. Darian Rath",
+                "email": "gulgowski.domingo@example.org",
+                "is_author": 1
+            }
+        },
+        {
+            "id": 3,
+            "title": "Aliquid aliquid nesciunt sed.",
+            "description": "Beatae qui laboriosam id consequatur autem qui porro. Harum illum corrupti qui autem. Inventore ut itaque officiis officiis excepturi quidem non.",
+            "cover": "",
+            "published_at": "24\/01\/2020 20:16",
+            "author": {
+                "id": 6,
+                "name": "Jackie McKenzie PhD",
+                "email": "amy83@example.net",
+                "is_author": 1
+            }
+        }
+    ],
+    "links": {
+        "first": "http:\/\/books.loc\/api\/books?page=1",
+        "last": "http:\/\/books.loc\/api\/books?page=3",
+        "prev": "http:\/\/books.loc\/api\/books?page=1",
+        "next": "http:\/\/books.loc\/api\/books?page=3"
+    },
+    "meta": {
+        "current_page": 2,
+        "from": 16,
+        "last_page": 3,
+        "path": "http:\/\/books.loc\/api\/books",
+        "per_page": 15,
+        "to": 30,
+        "total": 31
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/books</code></p>
+<!-- END_c84ecb8d4fd02d9a637dac124b62c629 -->
+<!-- START_33c6d64a451af167032c5c54df96db5c -->
+<h2>Store book</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://books.loc/api/books" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"title":"sint","description":"consectetur","author_id":12}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://books.loc/api/books"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "title": "sint",
+    "description": "consectetur",
+    "author_id": 12
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "id": null,
+            "title": "Deserunt qui quaerat.",
+            "description": "Et pariatur ipsum deserunt illum. Distinctio quibusdam ex reprehenderit assumenda quidem. Nesciunt est quasi aut recusandae.",
+            "cover": "",
+            "published_at": "",
+            "author": null
+        },
+        {
+            "id": null,
+            "title": "Sed sequi.",
+            "description": "Molestiae error at doloribus. Est totam quia vel libero sint. Voluptate cum molestias aut nihil labore mollitia et est. Fugit velit hic aut deserunt quis dolorem.",
+            "cover": "",
+            "published_at": "",
+            "author": null
+        }
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/books</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>The title of the book.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>required</td>
+<td>The description of the book.</td>
+</tr>
+<tr>
+<td><code>author_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The id of the author.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_33c6d64a451af167032c5c54df96db5c -->
+<!-- START_12c1c577fc002b5da2d75267229f7bb3 -->
+<h2>Get book by id</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://books.loc/api/books/tempora" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://books.loc/api/books/tempora"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "id": null,
+            "title": "Sed repellat eligendi laboriosam.",
+            "description": "Et est quis suscipit tempora quia ut. Perspiciatis recusandae ullam earum illum. Tempora minima molestias nesciunt aut odit eos.",
+            "cover": "",
+            "published_at": "",
+            "author": null
+        },
+        {
+            "id": null,
+            "title": "Quae nam at.",
+            "description": "Eum ut pariatur similique beatae aut error vel et. Vero repellat et omnis ex totam ut.",
+            "cover": "",
+            "published_at": "",
+            "author": null
+        }
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/books/{book}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>book</code></td>
+<td>required</td>
+<td>The ID of the book.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_12c1c577fc002b5da2d75267229f7bb3 -->
+<!-- START_d75ecf1315f29c879b459ea9788d1c21 -->
+<h2>Delete book</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://books.loc/api/books/ea" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://books.loc/api/books/ea"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "status": true
+}</code></pre>
+<blockquote>
+<p>Example response (404):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "status": false,
+    "message": "No query results for model [App\\Book] {book}"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/books/{book}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>book</code></td>
+<td>required</td>
+<td>The ID of the book.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_d75ecf1315f29c879b459ea9788d1c21 -->
+<!-- START_58c4db42d1c289e1c1cef47d740831e9 -->
+<h2>Publish book</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Allowed only for authors</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://books.loc/api/book/publish" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -d '{"title":"est","description":"voluptatibus","cover":"dicta"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://books.loc/api/book/publish"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "title": "est",
+    "description": "voluptatibus",
+    "cover": "dicta"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (201):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Successful book publish"
+}</code></pre>
+<blockquote>
+<p>Example response (400):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "title": [
+        "The title field is required."
+    ]
+}</code></pre>
+<blockquote>
+<p>Example response (403):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "error": "Unauthorized"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/book/publish</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>The title of the book.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>required</td>
+<td>The description of the book.</td>
+</tr>
+<tr>
+<td><code>cover</code></td>
+<td>file</td>
+<td>optional</td>
+<td>nullable image mimes:jpeg,png The cover of the book.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_58c4db42d1c289e1c1cef47d740831e9 -->
+<h1>User authentication</h1>
+<p>APIs for user authentication</p>
+<!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
+<h2>Login User</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://books.loc/api/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"username":"similique","password":"molestiae"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://books.loc/api/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "username": "similique",
+    "password": "molestiae"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "access_token": "{token}"
+}</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Your credentials are incorrect. Please try again"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>username</code></td>
+<td>email</td>
+<td>required</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the user.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
+<!-- START_d7b7952e7fdddc07c978c9bdaf757acf -->
+<h2>Register User</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://books.loc/api/register" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"quisquam","email":"a","password":"delectus","is_subscribed":true,"is_author":false}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://books.loc/api/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "quisquam",
+    "email": "a",
+    "password": "delectus",
+    "is_subscribed": true,
+    "is_author": false
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (201):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Successful registration"
+}</code></pre>
+<blockquote>
+<p>Example response (400):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "password": [
+        "The password confirmation does not match."
+    ]
+}</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Something went wrong on the server."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/register</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the user.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>email</td>
+<td>required</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the user.</td>
+</tr>
+<tr>
+<td><code>is_subscribed</code></td>
+<td>boolean</td>
+<td>optional</td>
+<td>If user is subscribed.</td>
+</tr>
+<tr>
+<td><code>is_author</code></td>
+<td>boolean</td>
+<td>optional</td>
+<td>If user is author.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_d7b7952e7fdddc07c978c9bdaf757acf -->
+<!-- START_61739f3220a224b34228600649230ad1 -->
+<h2>Logout User</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://books.loc/api/logout" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://books.loc/api/logout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Logged out successfully"
+}</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Something went wrong on the server."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/logout</code></p>
+<!-- END_61739f3220a224b34228600649230ad1 -->
+<!-- START_2b6e5a4b188cb183c7e59558cce36cb6 -->
+<h2>Get User</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://books.loc/api/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://books.loc/api/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "id": null,
+            "name": "Bret Yundt",
+            "email": "danny97@example.net",
+            "is_author": true
+        },
+        {
+            "id": null,
+            "name": "Pauline Beahan",
+            "email": "pfannerstill.liliane@example.com",
+            "is_author": true
+        }
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/user</code></p>
+<!-- END_2b6e5a4b188cb183c7e59558cce36cb6 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>
